@@ -5,6 +5,8 @@ const app = express();
 const connect = require("./db/dbConnect");
 const Task = require("./models/Task");
 
+const taskRoutes = require("./routes/taskRoutes");
+
 // Configurando o motor de template Handlebars
 app.engine("handlebars", exphbs.engine());
 app.set("view engine", "handlebars");
@@ -13,6 +15,8 @@ app.set("view engine", "handlebars");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
+
+app.use("/tasks", taskRoutes);
 
 // Função para iniciar o servidor
 const startServer = async () => {
