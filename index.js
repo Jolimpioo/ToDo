@@ -18,6 +18,8 @@ app.use(express.static("public"));
 const startServer = async () => {
   try {
     await connect.sync(); // Sincroniza os modelos com o banco de dados
+    // Recria todas as tabelas, apagando os dados; útil para desenvolvimento inicial
+    //.sync({ force: true });
     app.listen(3000, () => {
       console.log("Servidor rodando na porta 3000");
     });
