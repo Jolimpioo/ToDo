@@ -2,7 +2,7 @@ const { DataTypes } = require("sequelize");
 const db = require("../db/dbConnect.js");
 
 const Task = db.define("Task", {
-  tittle: {
+  title: {
     type: DataTypes.STRING,
     required: true,
   },
