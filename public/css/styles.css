@@ -91,6 +91,11 @@ form input[type="submit"] {
   font-size: 1.2em;
 }
 
+.title.done {
+  text-decoration: line-through;
+  color: #ccc;
+}
+
 .task-list .title:hover {
   color: #333;
 }
